@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 AUTHENTICATION_BACKENDS = (
     'users.views.CustomBackend',
-)
+) # 重置认证方式
 
 # Application definition
 

@@ -22,13 +22,20 @@ class CustomBackend(ModelBackend):
         except Exception as e:
             return None
 
+class RegisterView(View):
+
+    def get(self, request):
+        return render(request, 'register.html', {})
+
+    def post(self, request):
+        pass
+
 class LoginView(View):
 
     def get(self,request):
         return render(request, 'login.html', {})
-        pass
 
-    def post(self,request):
+    def post(self, request):
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
             user_name = request.POST.get("username", '')

@@ -139,3 +139,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 ) # 静态文件地址配置
+
+# --------邮箱配置--------
+EMAIL_HOST = "smtp.sina.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'mxprojects@sina.com'
+EMAIL_HOST_PASSWORD = 'admin123'
+EMAIL_USE_TLS = False
+EMAIL_FROM = 'mxprojects@sina.com'
+# --------邮箱配置--------

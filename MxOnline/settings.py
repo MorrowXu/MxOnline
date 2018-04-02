@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import sys
 
-import sql_host
+import extra_apps.sql_host as sql_host
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps')) # 将apps加入到搜索路径里
@@ -31,9 +31,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# --------重置认证方式--------
+
 AUTHENTICATION_BACKENDS = (
     'users.views.CustomBackend',
-) # 重置认证方式
+)
+# --------重置认证方式--------
+
 
 # Application definition
 
@@ -123,6 +127,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
+# --------汉化与时区配置--------
 LANGUAGE_CODE = 'zh-hans' # 1.7以前汉化包叫zh-cn
 
 TIME_ZONE = 'Asia/Shanghai' # 时区
@@ -132,15 +137,18 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False # 默认为True， 国际UTC时间
+# --------汉化与时区配置--------
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+# --------静态文件地址配置--------
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-) # 静态文件地址配置
+)
+# --------静态文件地址配置--------
 
 # --------邮箱配置--------
 EMAIL_HOST = "smtp.sina.com"
@@ -150,3 +158,8 @@ EMAIL_HOST_PASSWORD = 'admin123'
 EMAIL_USE_TLS = False
 EMAIL_FROM = 'mxprojects@sina.com'
 # --------邮箱配置--------
+
+# --------资源文件配置--------
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# --------资源文件配置--------

@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import sys
+
+import sql_host
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps')) # 将apps加入到搜索路径里
@@ -91,10 +93,10 @@ WSGI_APPLICATION = 'MxOnline.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mxonline_alpha',
+        'NAME': 'mxonline',
         'USER': 'root',
         'PASSWORD': '930502',
-        'HOST': '118.24.104.233',
+        'HOST': sql_host.host,
     }
 }
 

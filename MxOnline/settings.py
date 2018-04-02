@@ -52,9 +52,10 @@ INSTALLED_APPS = [
     'courses',
     'operation',
     'organization',
-    'xadmin',
-    'crispy_forms',
-    'captcha'
+    'xadmin', # xadmin_app
+    'crispy_forms', # xadmin 依赖
+    'captcha', # 第三方验证码功能app
+    'pure_pagination', # 第三方分页功能app
 ]
 
 AUTH_USER_MODEL = 'users.UserProfile' # 重载用户表
@@ -83,6 +84,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media', # 1.10 以上此条
+                # 'django.core.context_processors.media', # 1.9用此条
+
             ],
         },
     },
@@ -163,3 +167,12 @@ EMAIL_FROM = 'mxprojects@sina.com'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # --------资源文件配置--------
+
+# --------第三方分页功能app配置--------
+# PAGINATION_SETTINGS = {
+#     'PAGE_RANGE_DISPLAYED': 10,
+#     'MARGIN_PAGES_DISPLAYED': 2,
+#
+#     'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+# }
+# --------第三方分页功能app配置--------

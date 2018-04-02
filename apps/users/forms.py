@@ -26,6 +26,7 @@ class ForgetForm(forms.Form):
     email = forms.EmailField(required=True)
     captcha = CaptchaField(error_messages={'invalid':'验证码填写错误'}) # error_message 定义验证码错误提示
 
+
 class ModifyPwdForm(forms.Form):
     """增加验证码认证类"""
     password1 = forms.CharField(required=True,min_length=6) # 必填

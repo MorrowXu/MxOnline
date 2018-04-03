@@ -28,6 +28,5 @@ class ForgetForm(forms.Form):
 
 
 class ModifyPwdForm(forms.Form):
-    """增加验证码认证类"""
     password1 = forms.CharField(required=True,min_length=6) # 必填
     password2 = forms.CharField(required=True,min_length=6) # 必填
